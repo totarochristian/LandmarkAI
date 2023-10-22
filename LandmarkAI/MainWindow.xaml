@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel Margin="10">
-            
+            <Button Content="Select image"/>
         </StackPanel>
     </Grid>
 </Window>
