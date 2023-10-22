@@ -30,6 +30,9 @@ namespace LandmarkAI
         {
             //Initialize a dialog to choose a file from the pc and then open it
             OpenFileDialog dialog = new OpenFileDialog();
+            //Set dialog filters of which type of file the user could select
+            dialog.Filter = "Image files (*.png; *.jpg)|*.png;*.jpg;*.jpeg|All files (*.*)|*.*";
+
             //If user succesfully select a file
             if (dialog.ShowDialog() == true)
             {
