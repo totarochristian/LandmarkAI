@@ -24,5 +24,10 @@ namespace LandmarkAI
         {
             InitializeComponent();
         }
+
+        private void SelectImageButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

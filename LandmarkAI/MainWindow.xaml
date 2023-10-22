@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel Margin="10">
-            <Button Content="Select image"/>
+            <Button x:Name="SelectImageButton" Content="Select image" HorizontalAlignment="Center" Click="SelectImageButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
