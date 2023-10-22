@@ -42,7 +42,15 @@ namespace LandmarkAI
                 string fileName = dialog.FileName;
                 //Set the selected image source using the file selected by the user
                 selectedImage.Source = new BitmapImage(new Uri(fileName));
+
+                MakePredictionAsync(fileName);
             }
+        }
+
+        private void MakePredictionAsync(string fileName)
+        {
+            string url = "https://northeurope.api.cognitive.microsoft.com/customvision/v3.0/Prediction/bb98deea-c9e0-45a7-bc96-ed3ddb9c0593/classify/iterations/LandmarkAI/image";
+            
         }
     }
 }
