@@ -60,9 +60,14 @@ namespace LandmarkAI
             //Define client http connection
             using (HttpClient client = new HttpClient())
             {
-                //Add headers to the http request
+                //Add prediction key to the headers of the http request
                 client.DefaultRequestHeaders.Add("Prediction-Key", predictionKey);
-                client.DefaultRequestHeaders.Add("Content-Type", contentType);
+                
+                using(var content = new ByteArrayContent(file))
+                {
+                    //Set the content-type of the header of the http request
+                    content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
+                }
             }
         }
     }
