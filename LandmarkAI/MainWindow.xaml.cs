@@ -49,7 +49,7 @@ namespace LandmarkAI
             }
         }
 
-        private void MakePredictionAsync(string fileName)
+        private async void MakePredictionAsync(string fileName)
         {
             //Set default strings to make the request
             string url = "https://northeurope.api.cognitive.microsoft.com/customvision/v3.0/Prediction/bb98deea-c9e0-45a7-bc96-ed3ddb9c0593/classify/iterations/LandmarkAI/image";
@@ -69,7 +69,7 @@ namespace LandmarkAI
                     //Set the content-type of the header of the file content (to sent in the http request)
                     content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
                     //Post the content information in the url defined
-                    client.PostAsync(url, content);
+                    var response = await client.PostAsync(url, content);
                 }
             }
         }
