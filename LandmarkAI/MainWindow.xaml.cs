@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,9 @@ namespace LandmarkAI
 
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //Initialize a dialog to choose a file from the pc and then open it
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
         }
     }
 }
