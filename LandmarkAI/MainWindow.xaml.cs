@@ -38,6 +38,8 @@ namespace LandmarkAI
             {
                 //Save the full path of the image selected by the user
                 string fileName = dialog.FileName;
+                //Set the selected image source using the file selected by the user
+                selectedImage.Source = new BitmapImage(new Uri(fileName));
             }
         }
     }
