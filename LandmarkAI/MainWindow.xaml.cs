@@ -51,6 +51,8 @@ namespace LandmarkAI
         {
             string url = "https://northeurope.api.cognitive.microsoft.com/customvision/v3.0/Prediction/bb98deea-c9e0-45a7-bc96-ed3ddb9c0593/classify/iterations/LandmarkAI/image";
             string predictionKey = "cc120e31d3a344fa9cde535f0739fd39";
+            string contentType = "application/octet-stream";
+
         }
     }
 }
