@@ -68,8 +68,10 @@ namespace LandmarkAI
                 {
                     //Set the content-type of the header of the file content (to sent in the http request)
                     content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
-                    //Post the content information in the url defined
+                    //Post the content information in the url defined and await the response
                     var response = await client.PostAsync(url, content);
+                    //Read the response as string
+                    var responseString = await response.Content.ReadAsStringAsync();
                 }
             }
         }
