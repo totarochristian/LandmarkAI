@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -50,10 +51,17 @@ namespace LandmarkAI
 
         private void MakePredictionAsync(string fileName)
         {
+            //Set default strings to make the request
             string url = "https://northeurope.api.cognitive.microsoft.com/customvision/v3.0/Prediction/bb98deea-c9e0-45a7-bc96-ed3ddb9c0593/classify/iterations/LandmarkAI/image";
             string predictionKey = "cc120e31d3a344fa9cde535f0739fd39";
             string contentType = "application/octet-stream";
+            //Read the file as array of bytes
             var file = File.ReadAllBytes(fileName);
+            //Define client http connection
+            using (HttpClient client = new HttpClient())
+            {
+
+            }
         }
     }
 }
