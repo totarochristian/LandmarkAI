@@ -18,7 +18,7 @@
         <ListView x:Name="predictionsListView" Grid.Column="1" Width="200" VerticalAlignment="Center">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Tag" Width="100" DisplayMemberBinding="{Binding Tag}"/>
+                    <GridViewColumn Header="TagName" Width="100" DisplayMemberBinding="{Binding TagName}"/>
                     <GridViewColumn Header="Probability" Width="100" DisplayMemberBinding="{Binding Path=Probability, StringFormat=P2}"/>
                 </GridView>
             </ListView.View>
