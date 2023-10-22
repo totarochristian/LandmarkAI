@@ -32,6 +32,8 @@ namespace LandmarkAI
             OpenFileDialog dialog = new OpenFileDialog();
             //Set dialog filters of which type of file the user could select
             dialog.Filter = "Image files (*.png; *.jpg)|*.png;*.jpg;*.jpeg|All files (*.*)|*.*";
+            //Set the initial directory of the file dialog as the "My Pictures" folder
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
 
             //If user succesfully select a file
             if (dialog.ShowDialog() == true)
