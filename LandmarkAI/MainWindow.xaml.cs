@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using LandmarkAI.Classes;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -72,6 +74,8 @@ namespace LandmarkAI
                     var response = await client.PostAsync(url, content);
                     //Read the response as string
                     var responseString = await response.Content.ReadAsStringAsync();
+                    //Deserialize the response string obtaining the custom vision object and then retrieve the predictions list from it
+                    List<Prediction> predictions = (JsonConvert.DeserializeObject<CustomVision>(responseString)).Predictions;
                 }
             }
         }
