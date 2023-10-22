@@ -62,6 +62,7 @@ namespace LandmarkAI
             {
                 //Add headers to the http request
                 client.DefaultRequestHeaders.Add("Prediction-Key", predictionKey);
+                client.DefaultRequestHeaders.Add("Content-Type", contentType);
             }
         }
     }
