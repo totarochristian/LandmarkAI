@@ -76,6 +76,8 @@ namespace LandmarkAI
                     var responseString = await response.Content.ReadAsStringAsync();
                     //Deserialize the response string obtaining the custom vision object and then retrieve the predictions list from it
                     List<Prediction> predictions = (JsonConvert.DeserializeObject<CustomVision>(responseString)).Predictions;
+                    //Set the items source of predictions list view equals to the predictions deserialized
+                    predictionsListView.ItemsSource = predictions;
                 }
             }
         }
