@@ -63,10 +63,13 @@ namespace LandmarkAI
                 //Add prediction key to the headers of the http request
                 client.DefaultRequestHeaders.Add("Prediction-Key", predictionKey);
                 
+                //Use the file readed to define the content of the http request
                 using(var content = new ByteArrayContent(file))
                 {
-                    //Set the content-type of the header of the http request
+                    //Set the content-type of the header of the file content (to sent in the http request)
                     content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
+                    //Post the content information in the url defined
+                    client.PostAsync(url, content);
                 }
             }
         }
