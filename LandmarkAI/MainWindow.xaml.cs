@@ -30,7 +30,12 @@ namespace LandmarkAI
         {
             //Initialize a dialog to choose a file from the pc and then open it
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.ShowDialog();
+            //If user succesfully select a file
+            if (dialog.ShowDialog() == true)
+            {
+                //Save the full path of the image selected by the user
+                string fileName = dialog.FileName;
+            }
         }
     }
 }
